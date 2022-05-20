@@ -56,12 +56,14 @@ const posts = [
     }
 ];
 
-
+const contenitore = document.getElementById("container");
 // creo un ciclo per generare i post
 posts.forEach ((mypost) => {
     
     const basePost = document.createElement ("div");
-    basePost.classList.add ("post")
+    basePost.classList.add ("post");
+    contenitore.append (basePost);
+
     //  intestazione post
     const headerPost = document.createElement ("div");
     headerPost.classList.add ("post__header");
@@ -77,7 +79,12 @@ posts.forEach ((mypost) => {
 
     // fotoprofilo
     const fotoProfiloPost = document.createElement ("img");
+    fotoProfiloPost.src = mypost.image;
     fotoProfiloPost.classList.add ("profile-pic");
+    metaPost.append (fotoProfiloPost);
+
+
+
 
 
 
