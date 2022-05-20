@@ -90,12 +90,12 @@ posts.forEach ((mypost) => {
     metaPost.append(giornoPost);
 
     let autorePost = document.createElement ("div");
-    autorePost.classList.add ("post-meta__author");
+    autorePost.classList.add("post-meta__author");
     autorePost = mypost.author.name;
     giornoPost.append(autorePost);
 
     let tempoPost = document.createElement ("div");
-    tempoPost.classList.add ("post-meta__time");
+    tempoPost.classList.add("post-meta__time");
     tempoPost = mypost.created;
     giornoPost.append(tempoPost);
 
@@ -104,6 +104,20 @@ posts.forEach ((mypost) => {
     textPost.classList.add ("post__text");
      textPost = mypost.content;
     basePost.append(textPost);
+    
+    let contenutoPost = document.createElement ("div");
+    contenutoPost.classList.add ("post__image");
+    basePost.append(contenutoPost);
+
+    let fotoPost = document.createElement ("img");
+    fotoPost.src = mypost.media;
+    contenutoPost.append(fotoPost);
+    
+
+
+
+
+  
 
 
 
