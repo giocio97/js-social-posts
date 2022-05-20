@@ -112,6 +112,52 @@ posts.forEach ((mypost) => {
     let fotoPost = document.createElement ("img");
     fotoPost.src = mypost.media;
     contenutoPost.append(fotoPost);
+
+    // footer post
+    let footerPost = document.createElement ("div");
+    footerPost.classList.add ("post__footer");
+    basePost.append(footerPost);
+
+    let likePost = document.createElement("div");
+    likePost.classList.add ("post__footer");
+    footerPost.append(likePost);
+    
+    let likeCtaPost = document.createElement("div");
+    likeCtaPost.classList.add ("likes__cta");
+    likePost.append(likeCtaPost);
+
+    let likeButton  = document.createElement("a");
+    likeButton.classList.add ("like-button");
+    likeButton.classList.add ("js-like-button");
+    likeCtaPost.append (likeButton);
+
+    let likeIcona  = document.createElement("i");
+    likeIcona.classList.add ("like-button__icon");
+    likeIcona.classList.add ("fas");
+    likeIcona.classList.add ("fa-thumbs-up");
+    likeButton.append (likeIcona);
+
+    let likeIconaText = document.createElement("span");
+    likeIconaText.classList.add ("like-button__label");
+    likeButton.append (likeIconaText, ` Mi piace`);
+
+    let counter =  document.createElement("div");
+    counter.classList.add ("likes__counter");
+    likeButton.append (counter);
+
+    // let counterLike = document.createElement("b");
+    // counterLike.classList.add ("js-likes-counter");
+    // // counterLike.getElementsByTagName("like-counter-1") ;
+    // counterLike = mypost.likes;
+    // counter.append (`piace a`, counterLike `persone`);
+
+
+
+    
+
+    
+
+
     
 
 
