@@ -79,7 +79,7 @@ posts.forEach ((mypost) => {
 
     // fotoprofilo
     const fotoProfiloPost = document.createElement ("img");
-    fotoProfiloPost.src = mypost.image;
+    fotoProfiloPost.src = mypost.author.image;
     fotoProfiloPost.classList.add ("profile-pic");
     iconaPost.append (fotoProfiloPost);
 
@@ -89,10 +89,21 @@ posts.forEach ((mypost) => {
     
     metaPost.append(giornoPost);
 
-    const autorePost = document.createElement ("div");
+    let autorePost = document.createElement ("div");
     autorePost.classList.add ("post-meta__author");
-    autorePost = mypost.name;
-    giornoPost.append.append(autorePost);
+    autorePost = mypost.author.name;
+    giornoPost.append(autorePost);
+
+    let tempoPost = document.createElement ("div");
+    tempoPost.classList.add ("post-meta__time");
+    tempoPost = mypost.created;
+    giornoPost.append(tempoPost);
+
+    // parte centrale del post
+    let textPost = document.createElement ("div");
+    textPost.classList.add ("post__text");
+     textPost = mypost.content;
+    basePost.append(textPost);
 
 
 
