@@ -90,12 +90,12 @@ posts.forEach ((mypost) => {
     metaPost.append(giornoPost);
 
     let autorePost = document.createElement ("div");
-    autorePost.classList.add("post-meta__author");
+    autorePost.classList.add(".post-meta__author");
     autorePost = mypost.author.name;
     giornoPost.append(autorePost);
 
     let tempoPost = document.createElement ("div");
-    tempoPost.classList.add("post-meta__time");
+    tempoPost.classList.add(".post-meta__time");
     tempoPost = mypost.created;
     giornoPost.append(tempoPost);
 
@@ -119,7 +119,8 @@ posts.forEach ((mypost) => {
     basePost.append(footerPost);
 
     let likePost = document.createElement("div");
-    likePost.classList.add ("post__footer");
+    likePost.classList.add ("likes" );
+    likePost.classList.add ("js-likes" );
     footerPost.append(likePost);
     
     let likeCtaPost = document.createElement("div");
@@ -143,38 +144,21 @@ posts.forEach ((mypost) => {
 
     let counter =  document.createElement("div");
     counter.classList.add ("likes__counter");
-    likeButton.append (counter);
+    footerPost.append (counter);
 
-    // let counterLike = document.createElement("b");
+    let counterLike = document.createElement("b");
+    counterLike = mypost.likes
     // counterLike.classList.add ("js-likes-counter");
-    // // counterLike.getElementsByTagName("like-counter-1") ;
-    // counterLike = mypost.likes;
-    // counter.append (`piace a`, counterLike `persone`);
-
-
-
+    // counterLike.getElementsByTagName(like-counter-1);
+    counter.append (` Piace a `,counterLike, ` persone`);
     
-
+    likeButton.addEventListener("click",
+    ()=>{ likeButton.classList.add ("like-button--liked");
+    piuLike = mypost.likes++;
     
-
-
-    
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
+       
+});
+
+
+
